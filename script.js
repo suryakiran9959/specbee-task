@@ -61,22 +61,33 @@ const speakers = [
 
 function moveSlider(direction) {
     const sliderContainer = document.querySelector('.slider__container');
+    const sliderCards = document.querySelectorAll('.slider__card');
     const totalCards = speakers.length;
 
-    // Update the current index
+    // Calculate visible cards based on screen size
+    const containerWidth = sliderContainer.offsetWidth;
+    const cardWidth = sliderCards[0].offsetWidth;
+    const visibleCards = Math.floor(containerWidth / cardWidth);
+
+    // Update the current index, considering visible cards
     currentIndex += direction;
 
     // Loop around if currentIndex is out of bounds
     if (currentIndex < 0) {
-        currentIndex = totalCards - 1; // Go to the last card
-    } else if (currentIndex >= totalCards) {
-        currentIndex = 0; // Go to the first card
+        currentIndex = totalCards - visibleCards;
+    } else if (currentIndex > totalCards - visibleCards) {
+        currentIndex = 0;
     }
 
-    // Calculate the translation distance
-    const translateX = -currentIndex * (100 / totalCards);
-    sliderContainer.style.transform = `translateX(${translateX}%)`;
+    // Calculate translation
+    const translateX = -(currentIndex * cardWidth);
+    sliderContainer.style.transform = `translateX(${translateX}px)`;
 }
+
+// Handle window resize to recalculate visible cards and translation
+window.addEventListener('resize', () => {
+    moveSlider(0); // Reset translation on resize
+});
 
 // Function to open the popover and display the speaker details
 function openPopover(index) {
