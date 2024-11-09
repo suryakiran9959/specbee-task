@@ -1,6 +1,7 @@
 let currentIndex = 0;
 
 const speakers = [
+    
     {
         name: "John Doe",
         title: "Chief Marketing Office",
@@ -91,7 +92,6 @@ window.addEventListener('resize', () => {
 
 // Function to open the popover and display the speaker details
 function openPopover(index) {
-    // Populate popover with speaker details
     const speaker = speakers[index];
     document.getElementById('popover__name').innerText = speaker.name;
     document.getElementById('popover__title').innerText = speaker.title;
@@ -99,13 +99,13 @@ function openPopover(index) {
     document.getElementById('popover__bio').innerText = speaker.bio;
     document.getElementById('popover__img').src = speaker.img;
 
-    // Show the popover
     const popover = document.getElementById("popover");
-    popover.style.display = "block"; // Show the popover
+    popover.style.display = "block"; 
 }
 
-// Function to close the popover
+
 function closePopover() {
     const popover = document.getElementById("popover");
-    popover.style.display = "none"; // Hide the popover
+    popover.style.display = "none"; 
 }
+
