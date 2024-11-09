@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specbee Task</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the compiled CSS -->
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">View our Featured Speakers for the Event</h1>
+        <p class="header__description">Speakers are core contributors and industry thought leaders working at <span class="header__description__span">companies</span> that push for innovation.</p>  
+    </header>
+    
+    <main class="main">
+        <div id="popover" class="popover">
+            <button class="popover__close" onclick="closePopover()">&#10005;</button>
+            <div class="popover__info">
+                <img src="" alt="Speaker Image" id="popover__img" class="popover__img">
+                <div>
+                    <h3 class="popover__name" id="popover__name">Speaker Name</h3>
+                    <p class="popover__title" id="popover__title">Speaker Title</p>
+                    <p class="popover__company" id="popover__company">Company Name</p>
+                    <p class="popover__bio" id="popover__bio">This is the speaker's bio.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="slider">
+            <div class="slider__container">
+                <div class="slider__card" onclick="openPopover(0)">
+                    <img src="./assets/Ellipse 24.png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Marketing Officer</p>
+                    <p class="slider__card-company">Acme Corp</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(1)">
+                    <img src="./assets/Ellipse 24 (1).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Engagement Officer</p>
+                    <p class="slider__card-company">Acquia</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(2)">
+                    <img src="./assets/Ellipse 24 (2).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Technical Developer</p>
+                    <p class="slider__card-company">Pantheon</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(3)">
+                    <img src="./assets/Ellipse 24 (3).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Marketing Officer</p>
+                    <p class="slider__card-company">Specbee</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(4)">
+                    <img src="./assets/Ellipse 24.png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Marketing Officer</p>
+                    <p class="slider__card-company">Acme Corp</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(5)">
+                    <img src="./assets/Ellipse 24 (1).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Engagement Officer</p>
+                    <p class="slider__card-company">Acquia</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(6)">
+                    <img src="./assets/Ellipse 24 (2).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Technical Developer</p>
+                    <p class="slider__card-company">Pantheon</p>
+                </div>
+                <div class="slider__card" onclick="openPopover(7)">
+                    <img src="./assets/Ellipse 24 (3).png" alt="John Doe" class="slider__card-img">
+                    <h3 class="slider__card-name">John Doe</h3>
+                    <p class="slider__card-title">Chief Marketing Officer</p>
+                    <p class="slider__card-company">Specbee</p>
+                </div>
+                
+            </div>
+            <button class="slider__arrow slider__arrow--left" onclick="moveSlider(-1)">&lt;</button>
+            <button class="slider__arrow slider__arrow--right" onclick="moveSlider(1)">&gt;</button>
+        </section>
+    </main>
+    <footer class="footer">
+            <p class="footer__para1">Click here to see</p> 
+            <p class="footer__para2">the full program</p>
+            <img class="footer__img" src="./assets/Arrow 02.png" alt="">
+            <button class="footer__button">See the Program</button>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
